@@ -12,6 +12,7 @@ public class PowerUpHeight : PowerUpBase
     protected override void StartPowerUp()
     {
         base.StartPowerUp();
+        PlayerController.Instance.SetPowerUpText("Height");
         PlayerController.Instance.ChangeHeight(amountHeight, duration, animationDuration, ease);
     }
 

@@ -61,7 +61,7 @@ public class PlayerController : Singleton<PlayerController>
         {
             if (!invencible)
             {
-                MoveBack(collision.transform);
+                MoveBack();
                 EndGame();
             }
         }
@@ -75,9 +75,9 @@ public class PlayerController : Singleton<PlayerController>
         }
     }
 
-    private void MoveBack(Transform t)
+    private void MoveBack()
     {
-        t.DOMoveZ(1f, .2f).SetRelative();
+        transform.DOMoveZ(-1f, .2f).SetRelative();
     }
 
     private void EndGame(AnimatorManager.AnimationType animationType = AnimatorManager.AnimationType.DEAD)

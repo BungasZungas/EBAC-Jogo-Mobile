@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using ZUNGAS.Core.Singleton;
-/*
+
 public class ColorManager : Singleton<ColorManager>
 {
     public enum ArtType
@@ -13,9 +13,6 @@ public class ColorManager : Singleton<ColorManager>
 
     public List<Material> materials;
     public List<ColorSetup> colorSetup;
-
-    private List<GameObject> floors;
-    private List<GameObject> objects;
 
 
     public void ChangeColorByType(ColorManager.ArtType artType)
@@ -35,4 +32,4 @@ public class ColorSetup
 {
     public ColorManager.ArtType artType;
     public List<Color> colors;
-}*/
+}

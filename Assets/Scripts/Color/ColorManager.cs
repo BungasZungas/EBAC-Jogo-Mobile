@@ -5,31 +5,26 @@ using ZUNGAS.Core.Singleton;
 
 public class ColorManager : Singleton<ColorManager>
 {
-    public enum ArtType
-    {
-        TYPE_01,
-        TYPE_02
-    }
-
     public List<Material> materials;
-    public List<ColorSetup> colorSetup;
+    public List<ColorSetup> colorSetups;
 
 
-    public void ChangeColorByType(ColorManager.ArtType artType)
+    public void ChangeColorByType(ArtManager.ArtType artType)
     {
-        var setup = colorSetup.Find(i => i.artType == artType);
+        var setup = colorSetups.Find(i => i.artType == artType);
 
-        for(int i = 0; i < materials.Count; i++)
+        for (int i = 0; i <materials.Count; i ++)
         {
             materials[i].SetColor("_Color", setup.colors[i]);
         }
 
     }
+
 }
 
-
+[System.Serializable]
 public class ColorSetup
 {
-    public ColorManager.ArtType artType;
+    public ArtManager.ArtType artType;
     public List<Color> colors;
 }

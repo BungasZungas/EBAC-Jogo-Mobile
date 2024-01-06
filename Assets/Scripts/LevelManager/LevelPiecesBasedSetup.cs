@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class LevelPiecesBaseSetup : ScriptableObject
+public class LevelPiecesBasedSetup : ScriptableObject
 {
+    public ArtManager.ArtType artType;
+
     [Header("Pieces")]
     public List<LevelPieceBase> levelPiecesStart;
     public List<LevelPieceBase> levelPieces;

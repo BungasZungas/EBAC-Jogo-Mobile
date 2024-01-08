@@ -11,7 +11,7 @@ public class ItemCollactableCoin : ItemCollactableBase
 
     private void Start()
     {
-        //CoinsAnimationManager.Instance.RegisterCoin(this);
+        CoinsAnimationManager.Instance.RegisterCoin(this);
     }
 
     protected override void OnCollect()
@@ -19,12 +19,12 @@ public class ItemCollactableCoin : ItemCollactableBase
         base.OnCollect();
         collider.enabled = false;
         collect = true;
-        
-        //PlayerController.Instance.Bounce();
+        PlayerController.Instance.Bounce();
     }
 
     protected override void Collect()
     {
+        HideItens();
         OnCollect();
     }
 
@@ -32,13 +32,14 @@ public class ItemCollactableCoin : ItemCollactableBase
     {
         if (collect)
         {
-            //transform.position = Vector3.Lerp(transform.position, PlayerController.Instance.transform.position, LerpHelper * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, PlayerController.Instance.transform.position, lerp * Time.deltaTime);
 
             if(Vector3.Distance(transform.position, PlayerController.Instance.transform.position) < minDistance)
             {
-                //HideItens();
                 Destroy(gameObject);
             }
         }
     }
+
+
 }

@@ -19,6 +19,9 @@ public class PlayerController : Singleton<PlayerController>
 
     public GameObject endScreen;
 
+    [Header("Text")]
+    public TextMeshPro uiTextPowerUp;
+    
     public bool invencible;
 
     [Header("Coin Setup")]
@@ -27,8 +30,13 @@ public class PlayerController : Singleton<PlayerController>
     [Header("Animation")]
     public AnimatorManager animatorManager;
 
-    [Header("TextPowerUp")]
-    public TextMeshPro uiTextPowerUp;
+    [SerializeField] private BounceHelper _bouceHelper;
+
+    [Header("Bounce")]
+    public float scaleBounce = 1;
+    public float scaleDuration = 1f;
+    public Ease ease = Ease.OutBack;
+
 
     //privates
     private bool _canRun;
@@ -41,6 +49,13 @@ public class PlayerController : Singleton<PlayerController>
     {
         _startPosition = transform.position;
         ResetSpeed();
+        Spawn();
+    }
+
+    public void Bounce()
+    {
+        if(_bouceHelper != null)
+            _bouceHelper.Bounce();
     }
 
     void Update()
@@ -138,4 +153,10 @@ public class PlayerController : Singleton<PlayerController>
         coinCollector.transform.localScale = Vector3.one * amount;
     }
     #endregion 
+
+    private void Spawn()
+    {
+        transform.localScale = Vector3.zero;
+        transform.DOScale(scaleBounce, scaleDuration).SetEase(ease);
+    }
 }

@@ -144,4 +144,4 @@ MonoBehaviour:
   timeToHide: 3
   graphicItem: {fileID: 4375561719082446523}
   audioSource: {fileID: 0}
-  duration: 3
+  duration: 2

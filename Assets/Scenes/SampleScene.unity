@@ -357,6 +357,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 399626405}
   m_CullTransparentMesh: 1
+--- !u!1 &438581762
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 438581764}
+  - component: {fileID: 438581763}
+  m_Layer: 0
+  m_Name: CoinsAnimationManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &438581763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438581762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e9ec1e97a2fdb44b8b8c080f818516c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itens: []
+  scaleDuration: 0.2
+  scaleTimeBetweenPieces: 0.1
+  ease: 27
+--- !u!4 &438581764
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438581762}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.793426, y: 2.950483, z: 19.077742}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &464947006
 GameObject:
   m_ObjectHideFlags: 0
@@ -1839,6 +1886,7 @@ GameObject:
   - component: {fileID: 1502714139}
   - component: {fileID: 1502714143}
   - component: {fileID: 1502714144}
+  - component: {fileID: 1502714138}
   m_Layer: 0
   m_Name: PlayerContainer
   m_TagString: Player
@@ -1846,6 +1894,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1502714138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502714137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4da99d57cd93141488fc33674b99517d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleDuration: 0.1
+  scaleBounce: 1.2
+  ease: 27
 --- !u!65 &1502714139
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1959,10 +2022,14 @@ MonoBehaviour:
   tagToCheck: Enemy
   tagToCheckLine: EndLine
   endScreen: {fileID: 936775804}
+  uiTextPowerUp: {fileID: 681964204}
   invencible: 0
   coinCollector: {fileID: 332122308}
   animatorManager: {fileID: 1939476820}
-  uiTextPowerUp: {fileID: 681964204}
+  _bouceHelper: {fileID: 1502714138}
+  scaleBounce: 1
+  scaleDuration: 1
+  ease: 27
 --- !u!1 &1612349558
 GameObject:
   m_ObjectHideFlags: 0
@@ -2004,6 +2071,9 @@ MonoBehaviour:
   timeBeetweenPieces: 0.3
   _index: 1
   _spawnedPieces: []
+  scaleDuration: 0.1
+  scaleTimeBetweenPieces: 0.1
+  ease: 27
 --- !u!4 &1612349560
 Transform:
   m_ObjectHideFlags: 0
